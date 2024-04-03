@@ -5,6 +5,7 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.os.Handler;
 import android.os.ParcelUuid;
+import android.content.pm.PackageManager;
 
 import androidx.annotation.NonNull;
 
@@ -59,6 +60,10 @@ public class FlutterCbluePlugin implements FlutterPlugin, MethodCallHandler {
     } else if (call.method.equals("printToBt")) {
 
       String printStr = call.argument("printStr");
+
+      boolean bluetoothAvailable = getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH);
+        System.out.println("Bluetooth disponivel");
+        System.out.println(bluetoothAvailable);
 
         BluetoothAdapter bluetooth = BluetoothAdapter.getDefaultAdapter();
 
