@@ -61,9 +61,6 @@ public class FlutterCbluePlugin implements FlutterPlugin, MethodCallHandler {
 
       String printStr = call.argument("printStr");
 
-      boolean bluetoothAvailable = getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH);
-        System.out.println("Bluetooth disponivel");
-        System.out.println(bluetoothAvailable);
 
         BluetoothAdapter bluetooth = BluetoothAdapter.getDefaultAdapter();
 
